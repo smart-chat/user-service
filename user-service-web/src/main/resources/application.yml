@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /UserService
+
+spring:
+  application:
+    name: UserService
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  h2:
+    console:
+      enabled: true
+  profiles:
+    active: h2
+
+---
+spring:
+  profiles: h2
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    properties:
+      hibernate:
+        jdbc:
+          use_get_generated_keys: true
+        javax:
+          persistance:
+            validation:
+              mode: none
+  datasource:
+    data: classpath:/database/init.sql

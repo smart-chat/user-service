@@ -1,0 +1,2 @@
+insert into user_tbl(user_id, user_name, password, email, registered_date) values (NEXT VALUE FOR seq_user, 'admin', '123', 'admin@home.ua', sysdate);
+insert into user_tbl(user_id, user_name, password, email) values (NEXT VALUE FOR seq_user, 'kep2', '3F1DDBD636A7532948412D726CCACDF02BBD96074416BE78BA9E4CA6818BDC2B', 's.komp');
